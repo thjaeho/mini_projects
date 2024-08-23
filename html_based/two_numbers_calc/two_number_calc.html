@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <style>
+    #calc td{width: 100px; height: 60px; text-align: center; }
+    #calc button{width: 100px; height: 60px;}
+  </style>
+
+  <div id="show" style="background-color: bisque; width: 428px; height: 50px; font-size: 32px;"></div>
+  <div id="result" style="background-color: bisque; width: 428px; height: 50px; font-size: 32px;"></div>
+  <table id="calc" border="1">
+    <tr>
+      <td><button id="percent">%</button></td>
+      <td><button id="divide">/</button></td>
+      <td><button id="clear">C</button></td>
+      <td><button id="back">back</button></td>
+    </tr>
+    <tr>
+      <td><button id="seven">7</button></td>
+      <td><button id="eight">8</button></td>
+      <td><button id="nine">9</button></td>
+      <td><button id="multi">X</button></td>
+    </tr>
+    <tr>
+      <td><button id="four">4</button></td>
+      <td><button id="five">5</button></td>
+      <td><button id="six">6</button></td>
+      <td><button id="minus">-</button></td>
+    </tr>
+    <tr>
+      <td><button id="one">1</button></td>
+      <td><button id="two">2</button></td>
+      <td><button id="three">3</button></td>
+      <td><button id="plus">+</button></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button id="zero" style="width: 204px;">0</button></td>
+      <td><button id="dot">.</button></td>
+      <td><button id="equal">=</button></td>
+    </tr>
+  </table>
+
+  <script>
+      $(document).ready(function() {
+      let result = '';
+      let inputStr = '';
+      let count = '';
+      let calc ='';
+      
+      function fnClear(){
+        inputStr = '';
+        $('#show').text(inputStr);
+        result = '';
+        $('#result').text(result);
+      }
+
+      // 결과값 출력 메소드 fnFinal
+      function fnFinal(){
+        let strNum1 = ''; // 앞 수 String 값 (2자리 이상 수일 시 데이터 변조 막기 위해 string)
+        let strNum2 = ''; // 뒤 수 String 값 (2자리 이상 수일 시 데이터 변조 막기 위해 string)
+        let calc = '';  // 연산자
+        // console.log(inputStr.length); 입력받은 총 스트링값 길이(for문 활용)
+        for(let index = 0; index<inputStr.length; index++){
+
+          // Number(inputStr.charAt(index)) 값이 NaN 일때 
+          // 즉 연산자 일때 조건식
+          // 단 '.' 인 경우는 숫자로 인식해야 함
+          if(inputStr.charAt(index) != '.' &&isNaN(Number(inputStr.charAt(index)))){
+            // 연산자 위치한 인덱스값 직전까지의 값 = 계산식용 수 1
+            for(let index1 =0; index1<index; index1++){
+              strNum1 += (inputStr.charAt(index1)).toString();
+            }
+            // 연산자 위치한 인덱스값 이후부터의 값 = 계산식용 수 2
+            for(let index2 = index+1; index2<inputStr.length; index2++){
+              strNum2 += (inputStr.charAt(index2)).toString();
+            }
+            calc = inputStr.charAt(index);
+          }
+        }
+        let num1 = Number(strNum1); // string 값 number 변환
+        let num2 = Number(strNum2); // string 값 number 변환
+
+        // console.log(num1, num2, calc); 수1, 수2, 연산자 체크
+        
+        // 연산자 비교용 switch문
+        switch(calc){
+          case '+': result = num1 + num2; $('#result').text(result); break;
+          case '-': result = num1 - num2; $('#result').text(result); break;
+          case 'X': result = num1 * num2; $('#result').text(result); break;
+          // 연산자 '/', '%' 일 시 나누는 값이 0이면 안되기 때문에
+          // fnDivide 메소드에 매개변수로 전달하여 연산처리
+          case '/': fnDivide(num1, num2, calc); break;
+          case '%': fnDivide(num1, num2, calc); break;
+        }
+      }
+      // 나누기용 메소드(0으로 나누는지 확인용 메소드)
+      function fnDivide(num1, num2, calc){
+        // 어차피 calc 연산자는 '/' , '%' 외에는 전달되지 않기 때문에
+        // 조건식에 추가로 작성할 필요 없음
+        if(num2 ===0){
+          result = 'cannot divide by zero';
+        }else{
+          switch(calc){
+            case '/': result = num1 / num2; break;
+            case '%': result = num1 % num2; break;
+          }
+        }
+        $('#result').text(result);
+      }
+
+      // back키 메소드(inputStr 값 뒤에서부터 하나씩 지우기)
+      function fnBack(){
+        let editStr = $('#show').text();
+        inputStr = '';
+        for(let index = 0; index<(editStr.length-1); index++){
+          inputStr += editStr.charAt(index);
+        }
+        $('#show').text(inputStr);
+      }
+
+      // 화면 버튼 누를때 동작할 메소드
+      $('#calc :button').on('click',function() {
+          // console.log($(this).text())
+          switch($(this).text()){
+            case '=': fnFinal(); break;
+            case 'C': inputStr += $(this).text(); fnClear(); break;
+            case 'back' : fnBack(); break;
+            default: inputStr += $(this).text() ; $('#show').text(inputStr); break;
+          }
+      })
+    })
+  </script>
+</body>
+</html>
