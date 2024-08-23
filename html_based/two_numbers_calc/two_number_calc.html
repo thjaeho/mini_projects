@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Calculator</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
@@ -76,6 +76,7 @@
 
       // 결과값 출력 메소드 fnFinal
       function fnFinal(){
+        // equal 다시 눌렀을때 한번 더 계산하는거 여기다가
         let strNum1 = ''; // 앞 수 String 값 (2자리 이상 수일 시 데이터 변조 막기 위해 string)
         let strNum2 = ''; // 뒤 수 String 값 (2자리 이상 수일 시 데이터 변조 막기 위해 string)
         let calc = '';  // 연산자
@@ -142,6 +143,13 @@
       $('#calc :button').on('click',function() {
           // console.log($(this).text())
 
+        // 시작수가 
+          if($('#show').text().charAt(0) === '0'){
+            if($('#show').text().charAt(1) != '.'){
+              inputStr ='';
+          }
+          }
+            
           // 연속 계산용 메소드
           // result값이 존재할 때, 클릭 인식 시 result값을 inputStr 에 대입해 show에 표시
           if(result !== ''&& $(this).text != '='){
