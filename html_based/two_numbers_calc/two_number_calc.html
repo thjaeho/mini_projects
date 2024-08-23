@@ -127,8 +127,19 @@
       // 화면 버튼 누를때 동작할 메소드
       $('#calc :button').on('click',function() {
           // console.log($(this).text())
+
+          // 연속 계산용 메소드
+          // result값이 존재할 때, 클릭 인식 시 result값을 inputStr 에 대입해 show에 표시
+          if(result !== ''&& $(this).text != '='){
+            inputStr = result;
+            result = '';
+            $('#result').text(result);
+          // }else if($(this).text == '='){ // 한번 더 계산하는 메소드 구현 예정
+            
+          }
+
           switch($(this).text()){
-            case '=': fnFinal(); break;
+            case '=': $('#show').text(inputStr); fnFinal(); break;
             case 'C': inputStr += $(this).text(); fnClear(); break;
             case 'back' : fnBack(); break;
             default: inputStr += $(this).text() ; $('#show').text(inputStr); break;
