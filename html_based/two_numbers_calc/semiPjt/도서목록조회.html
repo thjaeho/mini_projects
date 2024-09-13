@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div class="row">
+    <div class="col-sm-3" style="margin-left: 2%;">
+
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">회원정보관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">회원등급관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">포인트관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">Disabled</a>
+          <hr>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="col" style="margin-right: 2%;">
+      <h3>도서검색</h3>
+
+      
+      <div class="container p-3 my-3 border" style="height: 200px; background-color: lightgray;">
+        
+        <div style="display: flex; flex-direction: row;">
+          <div style="margin-right: 15px;">
+            아이디 : <input type="text">
+          </div>
+          <div>
+            저자명 : <input type="text">
+          </div>
+
+          
+        </div>
+
+        <br>
+
+        <div style="display: flex; flex-direction: row;">
+          <div style="margin-right: 15px;">
+            출판사 : <input type="text">
+          </div>
+          <div style="margin-right: 15px;">
+            카테고리 : 
+            <select name="" id="">
+              <option value="">카테고리1</option>
+              <option value="">카테고리2</option>
+            </select>
+          </div>
+          <div style="margin-left: 15px; justify-content: center;">
+            <a href="" class="btn btn-sm btn-secondary">검색</a>
+          </div>
+          
+          
+        </div>
+
+
+      </div>
+
+      
+      <table class="table striped table-striped">
+        <thead>
+          <tr>
+            <th>도서명</th>
+            <th>출판사</th>
+            <th>저자</th>
+            <th>카테고리</th>
+            <th>등록여부</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>c</td>
+            <td><a href="" class="btn btn-sm btn-danger">도서제거</a></td>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>c</td>
+            <td><a href="" class="btn btn-sm btn-danger">도서제거</a></td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+
+
+
+  </div>
+</body>
+</html>
