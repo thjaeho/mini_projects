@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div class="row">
+    <div class="col-sm-3" style="margin-left: 2%;">
+
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">회원정보관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">회원등급관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">포인트관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">Disabled</a>
+          <hr>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col" style="margin-right: 2%;">
+      <h3>포인트 일괄 지급 | 차감</h3>
+
+      
+      <div class="container p-3 my-3 border" style="height: 170px; background-color: lightgray;">
+        
+        <div>
+          포인트사유 : &nbsp;&nbsp; <input type="text" style="width: 400px;">
+        </div>
+
+        <br>
+        <div>
+          지급포인트 : &nbsp;&nbsp; <input type="number" style="width: 400px;">
+        </div>
+        
+
+        <div>
+          <br>
+          회원등급 : <input type="radio"> 전체 <input type="radio"> 일반회원 <input type="radio"> 우수회원 <input type="radio"> 특별회원
+          <button class="btn btn-sm btn-primary">포인트 지급</button>
+        </div>
+
+        
+
+      </div>
+
+      <h3>포인트 지급 | 조회</h3>
+      <div style="display: flex; flex-direction: row; background-color: aliceblue;">
+          
+        <div style="text-align: center;">
+         아이디 : <input type="text" style="width: 120px; margin-right: 20px;">
+         <a href="" class="btn btn-sm btn-secondary" style="margin-right: 20px;">아이디 조회</a>
+         포인트 : <input type="number" style="width: 120px;">
+        <select name="" id="" class="form-controll">
+          <option value="">지급</option>
+          <option value="">차감</option>
+        </select>
+        <br>
+        지급사유 : <input type="text" style="width: 70%; margin-top: 10px;">
+        <hr>
+           <table style="text-align: center;">
+             <thead>
+               <tr>
+                   <th style="padding: 0 40px;">회원아이디</th>
+                   <th style="padding: 0 40px;">회원명</th>
+                   <th style="padding: 0 40px;">등급</th>
+                   <th style="padding: 0 40px;">현재포인트</th>
+                   <th style="padding: 0 40px;">최종포인트</th>
+                   <th style="padding: 0 40px;"></th>
+                 </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td style="padding: 0 10px;">user01</td>
+                 <td style="padding: 0 10px;">홍길동</td>
+                 <td style="padding: 0 10px;">일반회원</td>
+                 <td style="padding: 0 10px;">10000p</td>
+                 <td style="padding: 0 10px;">10000p</td>
+                 <td style="padding: 0 10px;"><a href="" class="btn btn-sm btn-secondary">적용하기</a></td>
+               </tr>
+             </tbody>
+           </div>
+
+       </div>
+      
+
+  </div>
+  
+</body>
+</html>

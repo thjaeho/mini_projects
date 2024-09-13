@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div class="row">
+    <div class="col-sm-3" style="margin-left: 2%;">
+
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">회원정보관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">회원등급관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">포인트관리</a>
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">Disabled</a>
+          <hr>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col" style="margin-right: 2%;">
+      <h3>회원관리</h3>
+
+      
+      <div class="container p-3 my-3 border" style="height: 170px; background-color: lightgray;">
+        
+        <div>
+          아이디 : <input type="text">
+        </div>
+
+        <br>
+
+        <div style="display: flex; flex-direction: row;">
+          
+          <div>
+          기간검색 : <input type="date"> <input type="date">
+          </div>
+
+            <div>
+              <button class="btn btn-sm btn-light">일별</button>
+              <button class="btn btn-sm btn-light">월별</button>
+              <button class="btn btn-sm btn-light">년도별</button>
+            </div>
+
+        </div>
+
+        <div>
+          <br>
+          회원등급 : <input type="radio"> 전체 <input type="radio"> 일반회원 <input type="radio"> 우수회원 <input type="radio"> 특별회원
+        </div>
+
+      </div>
+
+      <div class="container p-3 my-3 border">
+
+        <table class="table-striped" id="userSelectTable">
+          <thead>
+            <tr>
+              <th>회원아이디</th>
+              <th>회원명</th>
+              <th>등급</th>
+              <th>연락처</th>
+              <th>수정</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>user01</td>
+              <td>홍길동</td>
+              <td>일반회원</td>
+              <td>010-1234-4321</td>
+              <td><a href="" class="btn btn-sm btn-secondary">수정</a></td>
+            </tr>
+
+            <tr>
+              <td>user01</td>
+              <td>홍길동</td>
+              <td>일반회원</td>
+              <td>010-1234-4321</td>
+              <td><a href="" class="btn btn-sm btn-secondary">수정</a></td>
+            </tr>
+
+            <tr>
+              <td>user01</td>
+              <td>홍길동</td>
+              <td>일반회원</td>
+              <td>010-1234-4321</td>
+              <td><a href="" class="btn btn-sm btn-secondary">수정</a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+       
+      </div>
+    </div>
+
+  </div>
+  <style>
+    #userSelectTable thead{
+      text-align: end;
+    }
+    #userSelectTable th{
+      padding-right: 50px;
+    }
+  </style>
+</body>
+</html>
